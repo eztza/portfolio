@@ -1,0 +1,244 @@
+@import url(http://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
+*{
+  margin: 0;
+  padding: 0;
+}
+:root{
+  --primary : #FF4F5A;
+  --secondary : #FF2C39;
+}
+body{
+  font-family: Droid Arabic Kufi,sans-serif;
+}
+a{
+  text-decoration: none;
+  color: var(--secondary);
+}
+header{
+  font-size: 19px;
+  text-align: center
+}
+.top-nav{
+  max-width: 1250px;
+  margin: auto;
+  display: flex;
+  padding: 30px 60px;
+  justify-content: space-between;
+}
+.top-nav ul{
+  display: flex;
+  list-style: none;
+}
+.top-nav ul li{
+  margin: auto 15px;
+}
+/*
+.top-hero{
+  box-shadow: 1px 1px 3px 1px rgba(1,1,1,.2)
+}
+*/
+.top-hero,.skills{
+  display: flex;
+  padding: 5px 20px;
+  text-align: center;
+  /*
+  border-bottom: 1px solid rgba(1,1,1,0.3);
+  */
+}
+.top-hero img,.skills img{
+  width: 480px;
+}
+#logo{
+  font-weight: 600;
+  font-size: 30px;
+}
+#lang{
+  color: #9A67FF;
+}
+.about,.skills-about{
+  color: var(--secondary);
+  line-height: 2;
+  margin: auto;
+}
+.about p,.skills-about p{
+  color: black
+}
+
+/* Skill bar */
+.skills{
+  direction: rtl;
+}
+.ezat-skills{
+  margin: auto;
+}
+
+.skill-bars{
+  padding: 25px 30px;
+  width: 600px;
+  border-radius: 10px;
+  margin: auto;
+}
+.skill-bars .bar{
+  margin: 20px 0;
+}
+.skill-bars .bar:first-child{
+  margin-top: 0px;
+}
+.skill-bars .bar .info{
+  margin-bottom: 5px;
+}
+.skill-bars .bar .info span{
+  font-weight: 500;
+  font-size: 17px;
+  opacity: 0;
+  animation: showText 0.5s 1s linear forwards;
+}
+@keyframes showText {
+  100%{
+    opacity: 1;
+  }
+}
+.skill-bars .bar .progress-line{
+  height: 10px;
+  width: 100%;
+  background: #f0f0f0;
+  position: relative;
+  transform: scaleX(0);
+  transform-origin: left;
+  border-radius: 10px;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.05),
+              0 1px rgba(255,255,255,0.8);
+  animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
+}
+@keyframes animate {
+  100%{
+    transform: scaleX(1);
+  }
+}
+.bar .progress-line span{
+  height: 100%;
+  position: absolute;
+  border-radius: 10px;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: var(--primary);
+  animation: animate 1s 1s cubic-bezier(1,0,0.5,1) forwards;
+}
+.bar .progress-line.html span{
+  width: 90%;
+}
+.bar .progress-line.css span{
+  width: 90%;
+}
+.bar .progress-line.php span{
+  width: 75%;
+}
+.bar .progress-line.sass span{
+  width: 50%;
+}
+.bar .progress-line.mysql span{
+  width: 30%;
+}
+.bar .progress-line.js span{
+  width: 80%;
+}
+.bar .progress-line.vue span {
+  width: 50%;
+}
+.progress-line span::after{
+  position: absolute;
+  top: -28px;
+  right: 0;
+  font-weight: 500;
+  background: var(--primary);
+  color: #fff;
+  padding: 0 8px;
+  font-size: 12px;
+  border-radius: 3px;
+  opacity: 0;
+  animation: showText2 0.5s 1.5s linear forwards;
+}
+@keyframes showText2 {
+  100%{
+    opacity: 1;
+  }
+}
+.progress-line.html span::after{
+  content: "90%";
+}
+.progress-line.css span::after{
+  content: "90%";
+}
+.progress-line.php span::after{
+  content: "75%";
+}
+.progress-line.sass span::after{
+  content: "50%";
+}
+.progress-line.mysql span::after{
+  content: "30%";
+}
+.progress-line.js span::after {
+  content: "80%";
+}
+.progress-line.vue span::after {
+  content: "50%";
+}
+
+footer{
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 11px !important;
+}
+.f-links a{
+  margin: auto 10px;
+}
+#ds{
+  display: none
+}
+@media(max-width:480px){
+  header{
+    margin-bottom: 80px;
+  }
+  .top-nav{
+    position: fixed;
+    background: white;
+    width: 90%;
+    display: block;
+    margin: auto;
+    top: 0;
+    padding: 5px 20px !important;
+  }
+  #logo{
+    font-size: 25px;
+  }
+  .top-nav ul{
+    font-size: 13px;
+    width: 100%;
+    overflow-x: auto;
+    align-items: center;
+  }
+  img{
+    width: 300px !important
+  }
+  .top-hero,.skills{
+    display: block;
+  }
+  .skill-bars{
+    width: unset!important
+  }
+  footer{
+    padding: 20px 10px;
+    font-size: 13px;
+  }
+}
+
+.ar{
+  direction: rtl;
+}
+.en{
+  direction: unset!important
+}
+.skills-about{
+  direction: rtl!important
+}
